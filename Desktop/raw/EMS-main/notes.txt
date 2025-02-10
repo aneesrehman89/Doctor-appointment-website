@@ -1,0 +1,6 @@
+e.target => which element it is targeting
+e.target.value => what is the value
+e.preventDefault() => avoid default behavior of browser i.e:- formSubmit() console
+JSON. parse() => string to object form
+JSON. stringify() => object to string
+arr.find => is used to find a particular value form an array
