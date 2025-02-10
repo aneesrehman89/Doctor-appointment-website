@@ -1,0 +1,210 @@
+.formparentContainer {
+  width: 97%;
+  height: 82vh;
+  display: flex;
+}
+
+.formImgContainer {
+  width: 50%;
+  background-color: #544598;
+  background-image: url(../assets/form/formbg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.text {
+  color: #544598;
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+.underline {
+  width: 25%;
+  border-bottom: 5px solid #544598;
+  border-radius: 4px;
+  padding: 6px 0px;
+}
+
+.inputs {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+}
+
+.inputParent {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-items: flex-start;
+  align-items: flex-start;
+  margin: auto;
+}
+
+.forminput {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  background: rgb(235, 234, 235);
+  margin-top: 8px;
+  padding: 10px 0px;
+}
+
+.forminput img {
+  margin: 0px 20px;
+  height: 18px;
+
+}
+
+#emailImg {
+  height: 15px;
+}
+
+.forminput input {
+  width: 70%;
+  background-color: inherit;
+  border:none;
+  outline: none;
+  color: #797979;
+  font-size: 1rem;
+}
+
+.next {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  margin-top: 23px;
+}
+
+.btn-next {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.btn-next button {
+  width: 100%;
+  height: 40px;
+  border-radius: 18px;
+  color: #fff;
+  background: #544598;
+  border: none;
+  outline: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+#alreadyAccount {
+  width: 100%;
+  text-align: center;
+  color: #2e504e;
+  padding: 18px 0px;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+#Account {
+  width: 100%;
+  text-align: center;
+  color: #2e504e;
+  padding: 18px 0px;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.eye {
+  width: 100%;
+  height: 16px;
+}
+
+.showHide {
+  width: 10%;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+span {
+  color: blue;
+}
+
+.error {
+  text-align: left;
+  color: rgb(231, 18, 18) !important;
+  padding: 5px 0px;
+}
+
+@media screen and (max-width:991px) {
+  .formparentContainer {
+    width: 99%;
+  }
+
+  .showHide {
+    margin-right: 15px;
+  }
+
+  .underline {
+    width: 35%;
+  }
+
+}
+
+@media screen and (max-width:750px) {
+  .formImgContainer {
+    display: none;
+  }
+
+  .underline {
+    width: 28%;
+  }
+
+  .container {
+    width: 80%;
+  }
+
+  .formparentContainer {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width:567px) {
+  .container {
+    width: 100%;
+  }
+
+  .text {
+    font-size: 2rem;
+  }
+
+  .underline {
+    width: 25%;
+  }
+.inputParent {
+  width: 80%;
+}
+  #alreadyAccount,
+  #Account {
+    font-size: 1rem;
+  }
+
+}

@@ -1,0 +1,193 @@
+.footer-parent {
+  width: 100%;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ border-top: 1px solid grey;
+ background-color: #d9ecf6;
+}
+
+.App-parent-container {
+ width: 80%;
+ display: flex;
+ column-gap: 4.5rem;
+  margin-top: 20px ;
+}
+
+.footer-logo {
+ width: 80%;
+ display: flex;
+ align-items: center;
+ column-gap: 10px;
+ color: #523c5f;
+}
+
+.footer-logo img {
+ width: 22%;
+}
+.content-container {
+ width: 40%;
+ font-size: 1rem;
+}
+.content-container p{
+ margin-top: 15px;
+ font-size: 14px;
+ line-height: 18px;
+}
+.container-logo {
+ display: flex;
+ margin-top: 1.5rem;
+ column-gap: 0.5rem;
+
+}
+
+.container-logo img {
+ height: 35px;
+}
+
+
+.personal-info {
+ width: 50%;
+ display: flex;
+ justify-content: space-between;
+}
+
+.personal-info ul {
+ list-style: none;
+
+}
+
+.personal-info li {
+ padding-top: 1rem;
+ font-size: 14px;
+}
+
+.personal-info h3 {
+ font-weight: bold;
+ font-size: 1.2rem;
+}
+
+.your-info h4 {
+ font-weight: bold;
+ font-size: 1rem;
+ margin: 1rem 0rem;
+
+}
+.your-info p{
+  font-size:14px;
+}
+.footer {
+ width: 100%;
+ margin-top: 2rem ;
+}
+
+.footer p{
+  /* margin-left: 5px; */
+  text-align: center;
+  padding-bottom: 8px;
+  font-size: 14px;
+}
+
+hr {
+ margin-bottom: 0.3rem;
+}
+
+@media screen and (max-width:991px) {
+
+.App-parent-container {
+  width: 90%;
+  column-gap: 5rem;
+ 
+ }
+ .footer-logo img {
+   width: 25%;
+ }
+ .personal-info {
+  width: 50%; 
+ }
+ .footer{
+  width: 90%;
+
+ }
+
+}
+
+@media screen and (max-width:767px) {
+
+ .App-parent-container {
+  display: flex;
+  flex-direction: column;
+ }
+
+ .content-container {
+  width: 95%;
+ }
+
+ .container-logo {
+  margin-top: 1rem;
+  column-gap: 1rem;
+ }
+.footer-logo img {
+  width: 15%;
+}
+ .container-logo img {
+  height: 40px;
+ }
+
+ .personal-info {
+  width: 80%;
+  margin-top: 1rem;
+ }
+
+ .personal-info li {
+  padding-top: 1.2rem;
+ }
+
+ .your-info h4 {
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 1rem 0rem;
+ }
+
+ .footer {
+  margin-top: 1rem;
+ }
+}
+
+@media screen and (max-width:576px) {
+  .footer-logo img {
+      width: 20%;
+    }
+ .container-logo img {
+  height: 40px;
+ }
+
+ .personal-info {
+ width:100%
+
+ }
+
+ .personal-info h3 {
+  margin-top: 1rem;
+ }
+
+ .personal-info li {
+  padding-top: 0.8rem;
+ }
+
+ .your-info h4 {
+  margin: 0.8rem 0rem;
+
+ }
+}
+@media screen and (max-width:390px) {
+  .footer-logo img {
+      width: 25%;
+    }
+  .personal-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+   }
+}
