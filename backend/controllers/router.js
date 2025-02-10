@@ -5,7 +5,7 @@ const UserModel = require("../models/UserSchema");
 const AppointmentModel = require("../models/Appointment");
 
 // Test route
-router.get('/test', (req, res) => {
+router.get('/', (req, res) => {
   res.json({ message: 'This is a test route.' });
 });
 
