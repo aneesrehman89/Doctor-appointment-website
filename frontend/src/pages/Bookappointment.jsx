@@ -112,7 +112,7 @@ const Bookappointment = () => {
      setAppointmentDetails((prevAppointments) => [...prevAppointments, bookingDetails]);
 
      // POST to backend using axios
-     await axios.post('http://localhost:8009/myappointments', bookingDetails);
+     await axios.post(`${process.env.REACT_APP_BACKEND_BASEURL}/myappointments`, bookingDetails);
      toast(`Appointment booked on ${bookingDetails.day}, ${bookingDetails.date} at ${bookingDetails.time}`);
 
      setTimeout(() => {

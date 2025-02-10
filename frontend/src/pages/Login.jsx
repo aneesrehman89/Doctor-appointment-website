@@ -31,7 +31,11 @@ const Login = () => {
     const { email, pwd } = data;
 
     try {
+<<<<<<< HEAD
       const response = await fetch("http://localhost:8009/login", {
+=======
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_BASEURL}/login`, {
+>>>>>>> 2fd5b6c (Update .gitignore to exclude node_modules and .env)
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -45,7 +49,7 @@ const Login = () => {
         toast.success("User Login Successfully");
         navigate("/");
         reset();
-        const userRes = await fetch(`http://localhost:8009/Users/${email}`);
+        const userRes = await fetch(`${process.env.REACT_APP_BACKEND_BASEURL}/Users/${email}`);
         const userData = await userRes.json();
         setUser(userData); //update context
 

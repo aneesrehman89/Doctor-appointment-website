@@ -17,7 +17,11 @@ const Myappointment = () => {
 
  const fetchAppointments = async (email) => {
   try {
+<<<<<<< HEAD
    const response = await fetch(`http://localhost:8009/myappointments?userEmail=${email}`);
+=======
+   const response = await fetch(`${process.env.REACT_APP_BACKEND_BASEURL}/myappointments?userEmail=${email}`);
+>>>>>>> 2fd5b6c (Update .gitignore to exclude node_modules and .env)
    const data = await response.json();
 
    if (response.ok) {
@@ -45,7 +49,7 @@ const Myappointment = () => {
       });
 
       if (result.isConfirmed) {
-        const response = await fetch(`http://localhost:8009/myappointments/${appointmentId}`, {
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_BASEURL}/myappointments/${appointmentId}`, {
           method: 'DELETE',
         });
 
