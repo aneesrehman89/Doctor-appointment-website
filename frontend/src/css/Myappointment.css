@@ -1,0 +1,59 @@
+.myappointment-parent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.myappointment-parent h2{
+margin-top: 100px;
+padding-bottom: 5px;
+border-bottom: 3px solid black;
+}
+.myappointment {
+  width: 80%;
+}
+
+.appointment-content {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  margin-top: 10px;
+  padding: 10px 0px;
+  border-bottom: 1px solid grey;
+}
+
+.docImg {
+  max-width: 40%;
+  border: 1px solid grey;
+  background-color: #e2e5ff;
+  border-radius: 30px;
+}
+
+.docImg img {
+  height: 150px;
+}
+
+.docContent button {
+  padding: 10px 20px;
+  border-radius: 200px;
+  background-color: #5b9d9a;
+  border: none;
+  outline: none;
+  color: white;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+@media screen and (max-width:600px) {
+  .appointment-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+    margin-top: 20px;
+  }
+
+  .docImg {
+    max-width: 60%;
+  }
+}
