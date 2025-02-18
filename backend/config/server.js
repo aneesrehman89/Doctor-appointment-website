@@ -8,7 +8,7 @@ const cors = require("cors");
 app.use(express.json());
 app.use(
   cors({
-    origin: ["https://deploy-mern-1whq.vercel.app"], 
+    origin: ["https://doctor-appointment-frontend-virid.vercel.app/"], 
     methods: ["POST", "GET"], 
     credentials: true, 
   })
