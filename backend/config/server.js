@@ -8,9 +8,9 @@ const cors = require("cors");
 app.use(express.json());
 app.use(
   cors({
-    origin: ["https://deploy-mern-1whq.vercel.app"], // Allowed origins
-    methods: ["POST", "GET"], // Allowed HTTP methods
-    credentials: true, // Allow credentials (cookies, authorization headers)
+    origin: ["https://deploy-mern-1whq.vercel.app"], 
+    methods: ["POST", "GET"], 
+    credentials: true, 
   })
 );
 
