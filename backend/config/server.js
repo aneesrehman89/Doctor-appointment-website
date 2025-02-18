@@ -6,7 +6,13 @@ const cors = require("cors");
 
 // Middleware
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://deploy-mern-1whq.vercel.app"], // Allowed origins
+    methods: ["POST", "GET"], // Allowed HTTP methods
+    credentials: true, // Allow credentials (cookies, authorization headers)
+  })
+);
 
 // Routes
 app.use(router);
