@@ -8,8 +8,8 @@ const cors = require("cors");
 app.use(express.json());
 app.use(
   cors({
-    origin: ["https://doctor-appointment-frontend-virid.vercel.app/"], 
-    methods: ["POST", "GET"], 
+    origin: ["https://doctor-appointment-frontend-virid.vercel.app"], 
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], 
     credentials: true, 
   })
 );
