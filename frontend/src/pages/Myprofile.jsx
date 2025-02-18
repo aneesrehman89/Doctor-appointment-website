@@ -17,7 +17,7 @@ const Myprofile = () => {
  // Save updated information
  const handleSave = async (updatedUser) => {
   try {
-   const response = await fetch('http://localhost:8009/personalinfo', {
+   const response = await fetch('https://doctor-appointment-backend-roan.vercel.app/personalinfo', {
     method: 'PUT',
     headers: {
      'Content-Type': 'application/json',

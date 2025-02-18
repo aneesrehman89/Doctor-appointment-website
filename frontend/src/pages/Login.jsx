@@ -31,7 +31,7 @@ const Login = () => {
     const { email, pwd } = data;
 
     try {
-      const response = await fetch("http://localhost:8009/login", {
+      const response = await fetch("https://doctor-appointment-backend-roan.vercel.app/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -45,7 +45,7 @@ const Login = () => {
         toast.success("User Login Successfully");
         navigate("/");
         reset();
-        const userRes = await fetch(`http://localhost:8009/Users/${email}`);
+        const userRes = await fetch(`https://doctor-appointment-backend-roan.vercel.app/Users/${email}`);
         const userData = await userRes.json();
         setUser(userData); //update context
 

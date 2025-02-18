@@ -30,7 +30,7 @@ const Personalinfo = () => {
     const finalData = { ...data, ...state };
 
     try {
-      const res = await fetch("http://localhost:8009/personalinfo", {
+      const res = await fetch("https://doctor-appointment-backend-roan.vercel.app/personalinfo", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -42,7 +42,7 @@ const Personalinfo = () => {
       if (res.status === 200) {
         toast("Information submitted successfully!");
         reset();
-        const userRes = await fetch(`http://localhost:8009/Users/${finalData.email}`);
+        const userRes = await fetch(`https://doctor-appointment-backend-roan.vercel.app/Users/${finalData.email}`);
         const userData = await userRes.json();
 
         setUser(userData); //update context
