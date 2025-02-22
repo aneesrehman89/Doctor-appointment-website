@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import '../css/Login.css';
 import emailIcon from '../assets/form/email.png';
@@ -15,6 +15,8 @@ import Cookies from 'js-cookie';
 
 
 const Login = () => {
+  const backendUrl = process.env.REACT_APP_BACKEND_URL;
+  console.log('Backend url is: ', backendUrl);
 
   let [pwdshow, setpwdshow] = useState(false);
   const { setUser } = useContext(UserContext);
@@ -31,7 +33,7 @@ const Login = () => {
     const { email, pwd } = data;
 
     try {
-      const response = await fetch("https://doctor-appointment-backend-roan.vercel.app/login", {
+      const response = await fetch(`${backendUrl}/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -45,7 +47,7 @@ const Login = () => {
         toast.success("User Login Successfully");
         navigate("/");
         reset();
-        const userRes = await fetch(`https://doctor-appointment-backend-roan.vercel.app/Users/${email}`);
+        const userRes = await fetch(`${backendUrl}/Users/${email}`);
         const userData = await userRes.json();
         setUser(userData); //update context
 
@@ -62,7 +64,6 @@ const Login = () => {
       console.log(error);
     }
   }
-
 
   return (
 

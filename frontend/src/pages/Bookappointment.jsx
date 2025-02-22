@@ -8,6 +8,9 @@ import { useContext } from "react";
 import { UserContext } from "../data/UserProvider";
 
 const Bookappointment = () => {
+
+ const backendUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:8009';
+
  const navigate = useNavigate();
  const { user, appointmentDetails, setAppointmentDetails } = useContext(UserContext);
  const { docId } = useParams();
@@ -112,7 +115,7 @@ const Bookappointment = () => {
      setAppointmentDetails((prevAppointments) => [...prevAppointments, bookingDetails]);
 
      // POST to backend using axios
-     await axios.post('https://doctor-appointment-backend-roan.vercel.app/myappointments', bookingDetails);
+     await axios.post(`${backendUrl}/myappointments`, bookingDetails);
      toast(`Appointment booked on ${bookingDetails.day}, ${bookingDetails.date} at ${bookingDetails.time}`);
 
      setTimeout(() => {
