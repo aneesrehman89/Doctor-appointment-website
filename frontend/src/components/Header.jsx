@@ -31,8 +31,8 @@ const Header = () => {
       <div className='header-logo'>
         <Link to='/'>
           <img src={logo} alt='Health Hub Logo' />
-          <h2>Health-Hub</h2>
         </Link>
+        <h2>Health-Hub</h2>
       </div>
 
       <nav className='header-list'>
