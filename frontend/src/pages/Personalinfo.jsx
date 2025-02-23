@@ -10,6 +10,8 @@ const Personalinfo = () => {
   const { setUser } = useContext(UserContext);
   const navigate = useNavigate();
 
+  const backendUrl = process.env.REACT_APP_BACKEND_URL;
+
   // Get the current date in "YYYY-MM-DD" format
   const today = new Date().toISOString().split("T")[0];
 
@@ -30,7 +32,7 @@ const Personalinfo = () => {
     const finalData = { ...data, ...state };
 
     try {
-      const res = await fetch("https://doctor-appointment-backend-roan.vercel.app/personalinfo", {
+      const res = await fetch(`${backendUrl}/personalinfo`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -42,7 +44,7 @@ const Personalinfo = () => {
       if (res.status === 200) {
         toast("Information submitted successfully!");
         reset();
-        const userRes = await fetch(`https://doctor-appointment-backend-roan.vercel.app/Users/${finalData.email}`);
+        const userRes = await fetch(`${backendUrl}/Users/${finalData.email}`);
         const userData = await userRes.json();
 
         setUser(userData); //update context

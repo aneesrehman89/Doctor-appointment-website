@@ -9,6 +9,8 @@ const Myprofile = () => {
  const [edit, setEdit] = useState(false); 
  const [updatedUser, setUpdatedUser] = useState({ ...user }); // hold updated values
 
+ const backendUrl = process.env.REACT_APP_BACKEND_URL;
+
  const handleInputChange = (e) => {
   const { name, value } = e.target;
   setUpdatedUser((prev) => ({ ...prev, [name]: value }));
@@ -17,7 +19,7 @@ const Myprofile = () => {
  // Save updated information
  const handleSave = async (updatedUser) => {
   try {
-   const response = await fetch('https://doctor-appointment-backend-roan.vercel.app/personalinfo', {
+   const response = await fetch(`${backendUrl}/personalinfo`, {
     method: 'PUT',
     headers: {
      'Content-Type': 'application/json',

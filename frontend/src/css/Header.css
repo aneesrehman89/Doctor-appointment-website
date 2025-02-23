@@ -1,217 +1,164 @@
+/* General Styles */
 .header-container {
   position: fixed;
-  z-index: 999;
+  z-index: 1000;
   width: 100%;
-  padding: 5px 15px;
+  padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(264deg, rgba(101, 191, 155, 1) 5%, rgba(101, 192, 154, 1) 9%, rgba(101, 190, 156, 1) 14%, rgba(100, 196, 151, 1) 31%, rgba(100, 196, 151, 1) 31%, rgba(99, 205, 142, 1) 41%, rgba(101, 191, 155, 1) 71%, rgba(104, 171, 174, 1) 81%, rgba(102, 181, 165, 1) 94%, rgba(101, 191, 155, 1) 100%, rgba(101, 191, 155, 1) 100%, rgba(106, 154, 190, 1) 100%, rgba(109, 135, 207, 1) 100%);
+  background: linear-gradient(264deg, rgba(101, 191, 155, 1) 5%, rgba(104, 171, 174, 1) 100%);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Logo */
 .header-logo {
-  width: 30%;
   display: flex;
   align-items: center;
-  column-gap: 10px;
+  gap: 10px;
   color: #523c5f;
 }
 
 .header-logo img {
-  width: 18%;
-  margin-bottom: 5px;
+  width: 40px;
+  height: 40px;
 }
 
+/* Navigation */
 .header-list ul {
   display: flex;
-  gap: 30px;
+  gap: 20px;
   list-style: none;
-  color: #523c5f;
-  transition: left 0.3s ease;
 }
 
 .link {
   text-decoration: none;
-  color: inherit;
-}
-
-.header-list ul li {
-  position: relative;
-}
-
-.header-list ul li:hover::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background-color: #55455f;
-}
-
-.header-container button {
-  padding: 10px 20px;
-  border-radius: 200px;
-  background-color: #5b9d9a;
-  border: none;
-  outline: none;
-  color: #523c5f;
+  color: inherit; /* Keeps the original text color */
   font-weight: 600;
+  transition: color 0.3s ease-in-out;
 }
 
+.link:hover {
+  color: #55455f;
+}
+
+/* Profile Dropdown */
 .profile {
   display: flex;
   align-items: center;
-  gap: 5px;
+  cursor: pointer;
 }
 
 .profile h4 {
   color: #523c5f;
+  margin-left: 5px;
 }
 
-#profile-pic {
-  border-radius: 50%;
+.profile-pic {
+  width: 35px;
   height: 35px;
+  border-radius: 50%;
 }
 
 .dropdown {
   position: relative;
-  display: inline-block;
-  z-index: 1;
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
-  right: 0px;
-  background-color: #f1f1f1;
+  right: 0;
+  top: 100%;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
   min-width: 160px;
-}
-
-.dropdown-content ul {
-  list-style: none;
-}
-
-.dropdown-content li {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
+  text-align: left;
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
-.dropdown-content li:hover {
-  background-color: #ddd;
+.dropdown-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-#dropdown {
-  padding: 0px 0px 10px 10px;
+.dropdown-content li {
+  padding: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dropdown-content li:hover {
+  background-color: #f0f0f0;
+}
+
+/* Login Button */
+.login-btn {
+  padding: 10px 20px;
+  border-radius: 20px;
+  background: #5b9d9a;
+  color: #523c5f;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s;
+}
+
+.login-btn:hover {
+  background: white;
+  color: #5b9d9a;
 }
 
 /* Hamburger Menu */
-#checkbtn {
-  position: absolute;
-  right: 0;
-  top: 10px;
-  margin-right: 10px;
-  font-size: 1.8rem;
-  color: #523c5f;
+.menu-icon {
   display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #523c5f;
 }
 
 #check {
   display: none;
 }
 
-#check:checked ~ .header-list ul {
-  left: 0;
-}
-
+/* Responsive Design */
 @media screen and (max-width: 800px) {
-  .header-logo img {
-    width: 20%;
-  }
-
-  .header-container button {
-    margin-right: 40px;
-  }
-
-  #checkbtn {
+  .menu-icon {
     display: block;
   }
 
   .header-list ul {
-    width: 98%;
     flex-direction: column;
-    padding: 30px 0px;
-    background-color: rgba(101, 191, 155, 0.9);
     position: fixed;
-    top: 55px;
-    left: -100%;
-    z-index: 1;
-  }
-
-  .header-list ul li {
-    text-align: center;
-  }
-}
-
-@media screen and (max-width: 610px) {
-  .header-logo {
-    width: 60%;
-  }
-
-  .header-logo img {
-    width: 20%;
-  }
-
-  .header-list ul {
+    background: rgba(101, 191, 155, 0.95);
     width: 100%;
-    top: 75px;
-    font-weight: 600;
+    top: 60px;
+    left: -100%;
+    padding: 20px;
+    transition: left 0.3s ease-in-out;
   }
 
-  #checkbtn {
-    top: 20px;
+  #check:checked ~ .header-list ul {
+    left: 0;
+    text-align: center;
+    color: #523c5f;
   }
 }
 
-@media screen and (max-width: 450px) {
-  .header-container {
-    padding: 5px 5px;
-  }
-
-  .header-logo {
-    column-gap: 0px;
+@media screen and (max-width: 500px) {
+  .header-logo h2 {
+    font-size: 1rem;
   }
 
   .header-logo img {
-    width: 18%;
+    width: 30px;
+    height: 30px;
   }
 
-  .header-logo h2 {
-    font-size: 1.2rem;
-  }
-
-  .header-list ul {
-    top: 50px;
-  }
-
-  .header-container button {
-    padding: 8px 10px;
-    margin-right: 24px;
-  }
-
-  .profile {
-    margin-right: 15px;
-    padding: 8px 12px;
-  }
-
-  #checkbtn {
-    top: 15px;
-    margin-right: 5px;
-    font-size: 1.3rem;
+  .login-btn {
+    padding: 8px 15px;
   }
 }

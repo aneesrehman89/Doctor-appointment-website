@@ -104,10 +104,6 @@
 }
 
 @media screen and (max-width:991px) {
- .doctors-cards-conatiner {
-  margin-left: 20px;
- }
-
  .doctor-card {
   width: 30%;
  }
@@ -116,12 +112,7 @@
 @media screen and (max-width:767px) {
  .doctors-cards-conatiner {
   width: 90%;
-  margin-left: 30px;
   gap: 0px;
- }
-
- .doctor-filter {
-  margin-left: 30px;
  }
 
  .doctor-card {

@@ -6,7 +6,7 @@ import { UserContext } from "../data/UserProvider";
 
 const Myappointment = () => {
  const { user, appointmentDetails, setAppointmentDetails } = useContext(UserContext);
-  
+ const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
  useEffect(() => {
   if (user) {
@@ -17,7 +17,7 @@ const Myappointment = () => {
 
  const fetchAppointments = async (email) => {
   try {
-   const response = await fetch(`https://doctor-appointment-backend-roan.vercel.app/myappointments?userEmail=${email}`);
+    const response = await fetch(`${backendUrl}/myappointments?userEmail=${email}`);
    const data = await response.json();
 
    if (response.ok) {
@@ -45,7 +45,7 @@ const Myappointment = () => {
       });
 
       if (result.isConfirmed) {
-        const response = await fetch(`https://doctor-appointment-backend-roan.vercel.app/myappointments/${appointmentId}`, {
+        const response = await fetch(`${backendUrl}/myappointments/${appointmentId}`, {
           method: 'DELETE',
         });
 

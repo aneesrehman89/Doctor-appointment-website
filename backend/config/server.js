@@ -1,36 +1,36 @@
 const express = require("express");
-const app = express();
-const db = require("../config/connect");
-const router = require("../controllers/router");
 const cors = require("cors");
-require("dotenv").config(); // Import dotenv to access environment variables
+const dotenv = require("dotenv");
+const db = require("../config/connect"); // Ensure DB connection is established
+const router = require("../controllers/router");
 
-// Define the allowed origins based on the environment
-const allowedOrigins = process.env.VERCEL === 'true'
-  ? ["https://doctor-appointment-frontend-virid.vercel.app"] // Production frontend on Vercel
-  : [process.env.LOCAL_ORIGIN, "http://localhost:3000"]; // Local development, explicitly including localhost:3000
+dotenv.config(); // Load environment variables
+
+const app = express();
+
+// Only allow the production frontend
+const allowedOrigins = ["https://doctor-appointment-frontend-virid.vercel.app"];
 
 // Middleware
 app.use(express.json());
 app.use(
   cors({
-    origin: allowedOrigins,  // Use allowed origins dynamically based on environment
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Allowed HTTP methods
-    credentials: true, // Allow credentials (cookies, etc)
+    origin: allowedOrigins, // Only allow production frontend
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    credentials: true, 
   })
 );
 
 // Routes
 app.use(router);
 
-// Default route
+// Default route for health check
 app.get("/", (req, res) => {
-  res.send("Server is running!");
+  res.send("Server is running smoothly!");
 });
 
-// Start the server and listen on port 8009
-const PORT = process.env.PORT || 8009; // If you want to allow dynamic port, or default to 8009
+// Start server
+const PORT = process.env.PORT || 8009;
 app.listen(PORT, () => {
-  console.log(`Server is running at http://localhost:${PORT}`);
+  console.log(`🚀 Server running on port ${PORT}`);
 });
-
