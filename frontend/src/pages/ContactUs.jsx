@@ -18,9 +18,9 @@ const ContactUs = () => {
             </div>
             <div id='para'>
               <p>Tel: (415) 555‑0132</p>
-              <p>Email: Info@healthHub.com</p>
+              <p>Email: Info@mediconnect.com</p>
             </div>
-            <h4>Careers at health-Hub</h4>
+            <h4>Careers at MediConnect</h4>
             <div id='para'>
               <p>Learn more about our teams and job openings.</p>
             </div>

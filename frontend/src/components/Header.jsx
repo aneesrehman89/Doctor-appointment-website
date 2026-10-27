@@ -30,9 +30,9 @@ const Header = () => {
 
       <div className='header-logo'>
         <Link to='/'>
-          <img src={logo} alt='Health Hub Logo' />
+          <img src={logo} alt='MediConnect Logo' />
         </Link>
-        <h2>Health-Hub</h2>
+        <h2>MediConnect</h2>
       </div>
 
       <nav className='header-list'>

@@ -15,7 +15,7 @@ const Footer = () => {
      <div className="content-container">
       <div className='footer-logo'>
        <img src={logo} alt="health-icon" />
-       <h2>Health-Hub</h2>
+       <h2>MediConnect</h2>
       </div>
       <p> Your trusted partner in health and wellness. We aim to provide comprehensive and accessible resources to support your journey toward a healthier, happier life. Connect with us for expert guidance, updates, and tools tailored to your needs. </p>
       <div className="container-logo">
@@ -39,7 +39,7 @@ const Footer = () => {
       <div className="your-info">
        <h3>Get In Touch</h3>
        <h4>Email Us:</h4>
-       <p>Info@healthHub.com</p>
+       <p>Info@mediconnect.com</p>
        <h4>Phone:</h4>
        <p>+44 (0)800 511 5586 (UK)</p>
       </div>
